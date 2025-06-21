@@ -1,0 +1,34 @@
+body {
+    counter-reset: figure;
+}
+
+figure {
+    counter-increment: figure;
+    display: table;
+    margin: 0 auto 1em;
+    max-width: 100%;
+    text-align: center;
+}
+
+figure img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+figure figcaption {
+    margin-top: 0.5em;
+    font-style: italic;
+    font-size: 0.9em;
+    color: #FFF;
+    line-height: 1.4;
+    text-align: center;
+}
+
+figure figcaption::before {
+    content: "Figure " counter(figure) ". ";
+    font-style: normal;
+    font-weight: bold;
+    color: #FFF;
+}
