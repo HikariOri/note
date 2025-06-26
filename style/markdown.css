@@ -37,8 +37,8 @@ figure figcaption::before {
 
 /* math */
 
- /* 通用数学环境样式 */
- .math-env {
+/* 通用数学环境样式 */
+.math-env {
     border-radius: 8px;
     position: relative;
     overflow: hidden;
@@ -163,7 +163,7 @@ figure figcaption::before {
 }
 
 .lemma::before {
-    content: "🧩 Lemma " counter(lemma);
+    content: "🧩 Lemma " counter(lemma) " (" attr(data-name) ")";
     display: block;
     padding: 12px 16px;
     background-color: #323630;
@@ -171,6 +171,10 @@ figure figcaption::before {
     font-weight: 600;
     /* font-size: 15px; */
     margin: 0 -16px 12px -16px;
+}
+
+.lemma:not([data-name])::before {
+    content: "🧩 Lemma " counter(lemma);
 }
 
 /* 推论环境 - 橙色主题 */
