@@ -1,7 +1,9 @@
 body {
-    counter-reset: figure;
+    counter-reset: definition theorem exercise example lemma corollary proposition figure;
 }
 
+
+/* figure */
 figure {
     counter-increment: figure;
     display: table;
@@ -31,4 +33,198 @@ figure figcaption::before {
     font-style: normal;
     font-weight: bold;
     color: #FFF;
+}
+
+/* math */
+
+/* 通用数学环境样式 */
+.math-env {
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    margin: 8px 0;
+    line-height: 1.6;
+    /* font-size: 15px; */
+    padding: 0 16px 8px 16px;
+}
+
+/* 定义环境 */
+.definition {
+    border: 1px solid #7dd3fc;
+    counter-increment: definition;
+}
+
+
+
+.definition::before {
+    content: "📋 Definition " counter(definition) " (" attr(data-name) ")";
+    display: block;
+    padding: 12px 16px;
+    background-color: #e0f7ff;
+    color: #0891b2;
+    font-weight: 600;
+    /* font-size: 15px; */
+    margin: 0 -16px 12px -16px;
+}
+
+.definition:not([data-name])::before {
+    content: "📋 Definition " counter(definition);
+}
+
+/* 定理环境 - 金色主题 */
+.theorem {
+    border: 1px solid #fbbf24;
+    counter-increment: theorem;
+}
+
+
+
+.theorem::before {
+    content: "🏆 Theorem " counter(theorem) " (" attr(data-name) ")";
+    display: block;
+    padding: 12px 16px;
+    background-color: #fef3c7;
+    color: #d97706;
+    font-weight: 600;
+    /* font-size: 15px; */
+    margin: 0 -16px 12px -16px;
+}
+
+.theorem:not([data-name])::before {
+    content: "🏆 Theorem " counter(theorem);
+}
+
+/* 证明环境 - 灰色主题 */
+.proof {
+    border: 1px solid #9ca3af;
+}
+
+
+
+.proof::before {
+    content: "✅ Proof";
+    display: block;
+    padding: 12px 16px;
+    background-color: #f3f4f6;
+    color: #4b5563;
+    font-weight: 600;
+    /* font-size: 15px; */
+    margin: 0 -16px 12px -16px;
+}
+
+/* 练习环境 - 红色主题 */
+.exercise {
+    border: 1px solid #f87171;
+    counter-increment: exercise;
+}
+
+
+
+.exercise::before {
+    content: "📝 Exercise " counter(exercise);
+    display: block;
+    padding: 12px 16px;
+    background-color: #fee2e2;
+    color: #dc2626;
+    font-weight: 600;
+    /* font-size: 15px; */
+    margin: 0 -16px 12px -16px;
+}
+
+/* 说明环境 - 紫色主题 */
+.remark {
+    border: 1px solid #a78bfa;
+}
+
+
+
+.remark::before {
+    content: "💡 Remark";
+    display: block;
+    padding: 12px 16px;
+    background-color: #f3e8ff;
+    color: #7c3aed;
+    font-weight: 600;
+    font-size: 15px;
+    margin: 0 -16px 12px -16px;
+}
+
+/* 例子环境 - 粉色主题 */
+.example {
+    border: 1px solid #fb7185;
+    counter-increment: example;
+}
+
+
+
+.example::before {
+    content: "⭐ Example " counter(example);
+    display: block;
+    padding: 12px 16px;
+    background-color: #fce7f3;
+    color: #e11d48;
+    font-weight: 600;
+    /* font-size: 15px; */
+    margin: 0 -16px 12px -16px;
+}
+
+/* 引理环境 - 绿色主题 */
+.lemma {
+    border: 1px solid #34d399;
+    counter-increment: lemma;
+}
+
+
+
+.lemma::before {
+    content: "🧩 Lemma " counter(lemma);
+    display: block;
+    padding: 12px 16px;
+    background-color: #d1fae5;
+    color: #059669;
+    font-weight: 600;
+    /* font-size: 15px; */
+    margin: 0 -16px 12px -16px;
+}
+
+/* 推论环境 - 橙色主题 */
+.corollary {
+    border: 1px solid #fb923c;
+    counter-increment: corollary;
+}
+
+
+
+.corollary::before {
+    content: "➡️ Corollary " counter(corollary) " (" attr(data-name) ")";
+    display: block;
+    padding: 12px 16px;
+    background-color: #fed7aa;
+    color: #ea580c;
+    font-weight: 600;
+    /* font-size: 15px; */
+    margin: 0 -16px 12px -16px;
+}
+
+.corollary:not([data-name])::before {
+    content: "➡️ Corollary " counter(corollary);
+}
+
+/* 命题环境 - 深蓝主题 */
+.proposition {
+    border: 1px solid #3b82f6;
+    counter-increment: proposition;
+}
+
+
+
+.proposition::before {
+    content: "📖 Proposition " counter(proposition);
+    display: block;
+    padding: 12px 16px;
+    background-color: #dbeafe;
+    color: #1d4ed8;
+    font-weight: 600;
+    /* font-size: 15px; */
+    margin: 0 -16px 12px -16px;
 }
