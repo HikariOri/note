@@ -57,7 +57,7 @@ figure figcaption::before {
 
 
 .definition::before {
-    content: "📋 Definition " counter(definition) " (" attr(data-name) ")";
+    content: "📋 Definition " counter(definition) ": " attr(data-name);
     display: block;
     padding: 12px 16px;
     background-color: #e0f7ff;
@@ -80,7 +80,7 @@ figure figcaption::before {
 
 
 .theorem::before {
-    content: "🏆 Theorem " counter(theorem) " (" attr(data-name) ")";
+    content: "🏆 Theorem " counter(theorem) ": " attr(data-name);
     display: block;
     padding: 12px 16px;
     background-color: #fef3c7;
@@ -200,7 +200,7 @@ figure figcaption::before {
 
 
 .corollary::before {
-    content: "➡️ Corollary " counter(corollary) " (" attr(data-name) ")";
+    content: "➡️ Corollary " counter(corollary) ": " attr(data-name);
     display: block;
     padding: 12px 16px;
     background-color: #fed7aa;
